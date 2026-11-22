@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Society - Register</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-bottom: 24px;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 6px;
+            text-align: left;
+        }
+
+        fieldset {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: inline-block;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="events.html">Events</a> |
+        <a href="register.html">Register</a>
+    </nav>
+
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Event</th>
+                <th scope="col">Date</th>
+                <th scope="col">Venue</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Intro to HTML</td>
+                <td>12 Nov</td>
+                <td>Lab 3</td>
+            </tr>
+            <tr>
+                <td>Event 1</td>
+                <td>13 Nov</td>
+                <td>Lab 3</td>
+            </tr>
+            <tr>
+                <td>Event 2</td>
+                <td>14 Nov</td>
+                <td>Lab 3</td>
+            </tr>
+            <tr>
+                <td>Event 3</td>
+                <td>16 Nov</td>
+                <td>Lab 3</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Total Seats</td>
+                <td>
+                    <img src="doraemon.jpg" alt="Doraemon" width="80">
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Day</th>
+                <th scope="col">Time</th>
+                <th scope="col">Activity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">Monday</td>
+                <td>2:00 PM</td>
+                <td>Web workshop</td>
+            </tr>
+            <tr>
+                <td>4:00 PM</td>
+                <td>Coding practice</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td colspan="2">Seminar (all day)</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>All day</td>
+                <td>Gaming and coding</td>
+            </tr>
+            <tr>
+                <td>Saturday</td>
+                <td colspan="2">Seminar (all day)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form action="register.html" method="post">
+        <fieldset>
+            <legend>Personal Details</legend>
+
+            <label for="fullname">Full name:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
+            <br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="name@example.com">
+            <br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required minlength="8">
+            <br><br>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="03001234567">
+            <br><br>
+
+            <label for="website">Website:</label>
+            <input type="url" id="website" name="website" placeholder="https://">
+            <br><br>
+
+            <label for="semester">Semester:</label>
+            <input type="number" id="semester" name="semester" min="1" max="8">
+            <br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob">
+            <br><br>
+
+            <label for="color">Favourite Colour:</label>
+            <input type="color" id="color" name="color" value="#1f3a5f">
+            <br><br>
+
+            <label for="experience">Experience Level:</label>
+            <input type="range" id="experience" name="experience" min="1" max="10" value="5">
+            <br><br>
+
+            <fieldset>
+                <legend>Preferences</legend>
+
+                <input type="radio" id="m" name="gender" value="male" checked>
+                <label for="m">Male</label>
+
+                <input type="radio" id="f" name="gender" value="female">
+                <label for="f">Female</label>
+                <br>
+
+                <input type="checkbox" id="web" name="interest" value="web">
+                <label for="web">Web</label>
+                <br><br>
+
+                <label for="dept">Department:</label>
+                <select id="dept" name="dept">
+                    <option value="cs" selected>Computer Science</option>
+                    <option value="ee">Electrical Engineering</option>
+                    <option value="se">Software Engineering</option>
+                    <option value="ai">Artificial Intelligence</option>
+                </select>
+            </fieldset>
+
+            <br>
+
+            <label for="photo">Profile Photo:</label>
+            <input type="file" id="photo" name="photo" accept="image/*">
+            <br><br>
+
+            <label for="about">Interests/About:</label>
+            <br>
+            <textarea id="about" name="about" rows="4" cols="40" placeholder="Web, AI, Networking and Gaming"></textarea>
+            <br><br>
+
+            <button type="submit">Register</button>
+            <button type="reset">Clear</button>
+        </fieldset>
+    </form>
+
+</body>
+</html>
+
+<!-- Questions/Answers
+TASK 1....
+Q: What does colspan do and what does rowspan do? How many cells must the second Monday row have, and why?
+Answer: colspan combines two or more columns into one cell horizontally.
+The second Monday row has two cells because rowspan occupies the first cell position across both Monday rows.
+rowspan combines two or more rows into one cell vertically.
+
+Q: Why are column titles written with <th> instead of <td>? Why is the table split into thead, tbody and tfoot?
+Answer: Column titles use <th> because they represent headings for rows or columns. They are usually bold and centered by default.
+<td> is used for ordinary data inside table cells.
+<thead> contains the table headings.
+<tbody> contains the main table data.
+<tfoot> contains summary or total information at the bottom of the table.
+
+TASK 2...
+Q: Open register.html, type your name and click Register. Look at the address bar: the data appears after a question mark. Write down what it looks like.
+Answer: When we enter our name and click Register, the data appears in the address bar after a question mark.
+
+Q: Change method="get" to method="post", then submit again. What is different in the address bar?
+Answer: With the POST method, the entered data does not appear in the address bar. It is sent in the request body instead of the URL.
+
+Q: Open register.html and test each field. Which fields show a picker (calendar, colour or slider) instead of a plain box? Does the password field show your typing?
+Answer:
+1. Date of Birth shows a calendar picker.
+2. Favourite Colour shows a colour picker.
+3. Experience Level shows a slider.
+The password field hides the actual typing and displays dots or asterisks.
+
+Q: Type text such as "abc" in the Semester field. What happens? Type 12 and then submit. What message does the browser show?
+Answer:
+- The browser does not accept "abc" because the input type is number.
+- The value 12 is rejected because the maximum allowed semester is 8.
+- The browser displays a validation message such as "Value must be less than or equal to 8."
+
+Q: Click the Clear button after typing some data. What is the difference between a button tag and an input of type submit?
+Answer: A button with type="submit" submits the form when clicked. A button with type="reset" clears the form fields.
+-->
